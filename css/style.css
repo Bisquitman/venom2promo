@@ -2,12 +2,26 @@ body {
   background-color: #14131a;
   color: white;
   font-family: "Roboto", sans-serif;
-  margin-left: 110px;
+}
+
+img {
+  max-width: 100%;
 }
 
 .container {
   max-width: 1140px;
+  width: 90%;
   margin: auto;
+}
+
+.venom {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  max-width: 728px;
+  width: 50%;
+  filter: drop-shadow(0px 4px 150px rgba(35, 0, 6, 0.2)),
+    drop-shadow(0px 4px 69px rgba(35, 0, 6, 0.5));
 }
 
 .header {
@@ -59,11 +73,12 @@ body {
   font-size: 24px;
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 40px;
+  margin-bottom: 3%;
 }
 
 .film-logo {
-  margin-bottom: 40px;
+  margin-bottom: 3%;
+  width: 70%;
 }
 
 .film-description {
@@ -74,7 +89,7 @@ body {
 }
 
 .button-group {
-  margin-top: 70px;
+  margin-top: 5%;
 }
 
 .button {
@@ -106,16 +121,8 @@ body {
   color: white;
 }
 
-.venom {
-  position: absolute;
-  top: 12px;
-  right: 0;
-  filter: drop-shadow(0px 4px 150px rgba(35, 0, 6, 0.2)),
-    drop-shadow(0px 4px 69px rgba(35, 0, 6, 0.5));
-}
-
 .blood {
-  background: url("../img/blood.png") no-repeat top right,
+  background: url("../img/blood.png") no-repeat top right / 70%,
     url("../img/background.png") no-repeat center center / 100%, #14131a;
 }
 
@@ -216,4 +223,136 @@ body {
 .poster-wrapper .list {
   margin: 0;
   margin-bottom: 20px;
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+.mobile-menu-close {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    padding-bottom: 5%;
+  }
+  .col {
+    margin-bottom: 5%;
+  }
+  .header {
+    margin-bottom: 4%;
+  }
+  .film {
+    margin-top: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .blood {
+    background: #14131a;
+  }
+  .venom {
+    top: 10%;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding-top: 5px;
+  }
+  .venom {
+    top: 20%;
+    width: 30%;
+  }
+  .nav-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.2s;
+  }
+  .nav-menu-item {
+    margin-bottom: 2%;
+    margin-top: 2%;
+    margin-right: 0;
+  }
+  .mobile-menu-close {
+    position: fixed;
+    display: flex;
+    right: 25px;
+    top: 30px;
+    opacity: 0;
+    align-items: center;
+    z-index: 10;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transform: translateX(300%);
+    transition: transform 0.2s;
+    transition-delay: 0.2s;
+  }
+  .is-active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .mobile-menu-close-text {
+    margin-right: 10px;
+  }
+  .nav-menu-link,
+  .nav-menu-link:hover {
+    color: #14131a;
+  }
+  .nav {
+    margin-left: auto;
+  }
+  .mobile-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    background-color: #14131a;
+    cursor: pointer;
+    color: white;
+  }
+  .mobile-menu-button-text {
+    margin-right: 10px;
+  }
+  .button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .film-text {
+    text-align: center;
+  }
+  .poster-wrapper {
+    flex-direction: column;
+  }
+  .poster {
+    margin-bottom: 4%;
+  }
+  .content .trailer {
+    max-width: 350px;
+    width: 100%;
+  }
+  .poster {
+    margin-right: 0;
+    max-width: 350px;
+    width: 100%;
+  }
+  .column-2 {
+    column-count: 1;
+  }
 }
